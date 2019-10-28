@@ -10,20 +10,123 @@
     <!-- jQuery Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- External reset link-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+
     <!-- Bootstrap link -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <!-- External reset link-->
-    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
 
     <!-- External stylesheet link-->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!-- External google fonts link-->
+    <link href="https://fonts.googleapis.com/css?family=Henny+Penny&display=swap" rel="stylesheet">
+
 </head>
+<!-- <img src="assets/images/download.jpeg"> -->
+<!-- <div>Registration closes in <span id="time"></span> minutes!</div> -->
 
 <body>
 
+    <header>
+        <div class="w-75 jumbotron">
+            <h1 class="display-4">Harry Potter Trivia Game!</h1>
+            <hr class="my-4">
+            <p>You will have 2 minutes to complete the game. When you are ready, click Start.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+        </div>
+    </header>
 
+    <div class="w-75" id="timer">
+    </div>
+
+    <div class="questions">
+        <div class="card w-75 text-center">
+            <div class="card-header">
+                Question 1
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Who are the four founders of Hogwarts?</h5>
+                <form>
+                    <label class="radio-inline">
+                        <input class="Q01" type="radio" name="optradio01" value="01A">Rowena Ravenclaw, Severus Snape,
+                        Salazar Slytherin, Albus Dumbledore
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q01" type="radio" name="optradio01" value="01B">Albus Dumbledore, Godric
+                        Gryffindor,
+                        Harry Potter, Dobby
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q01" type="radio" name="optradio01" value="01C">Helga Hufflepuff, Rowena
+                        Ravenclaw,
+                        Godric Gryffindor, Salazar Slytherin
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q01" type="radio" name="optradio01" value="01D">Harry Styles, Naill Horan, Liam
+                        Payne,
+                        Zayn Malik, Louis Tomlinson
+
+                    </label>
+                </form>
+
+            </div>
+        </div>
+
+        <div class="card w-75 text-center">
+            <div class="card-header">
+                Question 2
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Who did Snape fall in love with when he was at Hogwarts?</h5>
+                <form>
+                    <label class="radio-inline">
+                        <input class="Q02" type="radio" name="optradio02" value="02A">Molly Weasley
+
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q02" type="radio" name="optradio02" value="02B">Bellatrix Lestrange
+
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q02" type="radio" name="optradio02" value="02C">Professor McGonagall
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q02" type="radio" name="optradio02" value="02D">Lily Evans
+
+                    </label>
+                </form>
+            </div>
+        </div>
+
+        <div class="card w-75 text-center">
+            <div class="card-header">
+                Question 3
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Who killed Nagini at the Battle of Hogwarts?
+                </h5>
+                <form>
+                    <label class="radio-inline">
+                        <input class="Q03" type="radio" name="optradio03" value="03A">Neville Longbottom
+
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q03" type="radio" name="optradio03" value="03B">Harry Potter
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q03" type="radio" name="optradio03" value="03C">Ron Weasley
+
+                    </label>
+                    <label class="radio-inline">
+                        <input class="Q03" type="radio" name="optradio03" value="03D">Molly Weasley
+
+                    </label>
+                </form>
+            </div>
+        </div>
+
+    </div>
 
 
     <!-- External javascript link-->

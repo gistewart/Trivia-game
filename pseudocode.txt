@@ -1,0 +1,38 @@
+Opening Screen
+    Game Title
+    Start button
+        links to new page
+        starts countdown timer
+
+Then Question page
+    Timer showing time remaining
+    Questons and possible answers
+    Done option
+
+Results page
+    Game Title
+    All Done
+    Correct Answers: x
+    Incorrect Answers: y
+    Unanswered: z
+
+Set up array to store all the correct answers
+
+Set up variables to store each user answer
+
+On radio button click:
+    clear prior answer, if any 
+    store new answer
+
+Set up array to store all the user answers
+
+Push user answers to user answer array after each answer is selected
+
+
+
+
+Check user answer array against correct answer array for number of correct answers
+    for loop, with correct answer counter incrementing, indexOf not equal to -1
+Check questions with no answer
+Questions with incorrect answers = total number of questions - (correct answers + unanswered questions)
+
