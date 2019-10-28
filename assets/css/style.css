@@ -1,0 +1,28 @@
+.card {
+    margin: 10px auto 10px auto;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+label {
+    margin-right: 15px;
+}
+
+header,
+h5 {
+    font-family: 'Henny Penny', cursive;
+}
+
+header {
+    text-align: center;
+    margin: 30px auto 40px auto;
+}
+
+img {
+    float: left;
+    margin-left: 160px;
+    height: 80px;
+    width: 100px;
+}
