@@ -1,12 +1,16 @@
-.jumbotron,
-#timer,
-.card {
+* {
+    box-sizing: content-box;
+}
+
+.opening,
+.card,
+.results {
     margin: 10px auto 10px auto;
     text-align: center;
 }
 
 .jumbotron {
-    height: 300px;
+    height: 160px;
 }
 
 h1,
@@ -15,7 +19,7 @@ h5 {
     background-color: bisque;
 }
 
-h1 {
+.display-4 {
     padding: 20px;
     margin-top: -30px;
 }
@@ -25,13 +29,13 @@ h1 {
     padding-right: 25px;
 }
 
-.timer {
+h4 {
     text-align: center;
     background-color: green;
     color: white;
-    font-size: 24px;
+    font-size: 16px;
     font-weight: 600px;
-    padding: 20px;
+    padding: 10px;
 }
 
 input[type="radio"] {

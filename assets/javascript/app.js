@@ -1,13 +1,27 @@
 $(document).ready(function() {
 
     //declare global variables
-    userAnsArr = [];
+    let userAnsArr = [];
+    const correctAnsArr = ["01C", "02D", "03A"];
 
     function hideQuestions() {
         $(".questions").hide();
     }
 
+    function hideOpener() {
+        $(".Opening").hide();
+    }
+
+    function showResults() {
+        $(".results").show();
+    }
+
+    function hideResults() {
+        $(".results").hide();
+    }
+
     hideQuestions();
+    hideResults();
 
     // Timer
     var number = 10;
@@ -24,10 +38,11 @@ $(document).ready(function() {
         seconds = parseInt(number % 60, 10);
         minutes = minutes < 10 ? "0" + minutes : minutes;
         seconds = seconds < 10 ? "0" + seconds : seconds;
-        $("#timer").html("<h2>" + "Time left: " + minutes + ":" + seconds + "</h2>");
+        $("#timer").html("Time remaining " + minutes + ":" + seconds);
         if (number === 0) {
             stop();
             hideQuestions();
+            showResults();
         }
     }
 
@@ -36,9 +51,12 @@ $(document).ready(function() {
     }
 
     $(".btn").on("click", function() {
+        $(".opening").hide();
         $(".questions").show();
-        runTimer();
+        // runTimer();
     });
+
+
 
     $(".Q01").on("click", function() {
         console.log("Q1 just got clicked");
@@ -62,5 +80,19 @@ $(document).ready(function() {
         console.log(answer);
         userAnsArr[2] = answer;
         console.log(userAnsArr);
+        console.log(correctAnsArr);
+
+        var results1 = [];
+        for (var i = 0; i < userAnsArr.length; i++) {
+            if (correctAnsArr.indexOf(userAnsArr[i]) !== -1) {
+                results1.push(userAnsArr[i]);
+            }
+        }
+        console.log(results1);
+        console.log(correctAnsArr.length);
+
+        var empties = userAnsArr.length - userAnsArr.filter(function(x) { return true }).length;
+        console.log(empties);
     });
+
 });

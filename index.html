@@ -24,23 +24,22 @@
 
 </head>
 <!-- <img src="assets/images/download.jpeg"> -->
-<!-- <div>Registration closes in <span id="time"></span> minutes!</div> -->
 
 <body>
 
-    <header>
-        <div class="w-75 jumbotron">
-            <h1 class="display-4">Harry Potter Trivia Game!</h1>
-            <hr class="my-4">
-            <p>You will have 2 minutes to complete the game. When you are ready, click Start.</p>
-            <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
-        </div>
-    </header>
-
-    <div class="w-75" id="timer">
+    <div class="w-75 jumbotron opening">
+        <h1 class="display-4">Harry Potter Trivia Game!</h1>
+        <hr class="my-4">
+        <p>You will have 2 minutes to complete the game. When you are ready, click Start.</p>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
     </div>
 
     <div class="questions">
+        <div class="card w-75">
+            <h1>Harry Potter Trivia Game!</h1>
+            <h4 id="timer"></h4>
+        </div>
+
         <div class="card w-75 text-center">
             <div class="card-header">
                 Question 1
@@ -126,6 +125,22 @@
             </div>
         </div>
 
+        <div class="card w-25">
+            <div class="card-body Done">
+                <h1>Done</h1>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="results">
+        <div class="card w-50">
+            <h1>Harry Potter Trivia Game!</h1>
+            <div class="card-body">All Done!</div>
+            <div class="card-body">Correct Answers: </div>
+            <div class="card-body">Incorrect Answers</div>
+            <div class="card-body">Unanswered: </div>
+        </div>
     </div>
 
 
