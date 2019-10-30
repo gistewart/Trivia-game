@@ -5,7 +5,7 @@
 .opening,
 .card,
 .results {
-    margin: 10px auto 10px auto;
+    margin: 20px auto 10px auto;
     text-align: center;
 }
 
@@ -29,7 +29,7 @@ h5 {
     padding-right: 25px;
 }
 
-h4 {
+#timer {
     text-align: center;
     background-color: green;
     color: white;
@@ -48,11 +48,4 @@ label {
 
 .done {
     text-align: center;
-}
-
-img {
-    float: left;
-    margin-left: 160px;
-    height: 80px;
-    width: 100px;
 }

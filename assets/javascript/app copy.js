@@ -1,10 +1,9 @@
 $(document).ready(function() {
 
-    //declare global variables for number of questions answered correctly, number of questions answered incorrectly and number of questions not answered
-    let correctCounter = 0;
-    let incorrectCounter = 0;
-    let unansweredCounter = 0;
-
+    //declare global variables
+    let numUserCorrectAns = 0;
+    let numUserIncorrectAns = 0;
+    let numUserEmpties = 0;
     let userAnsArr = [];
 
     //array to store the correct answers to the questions
@@ -40,7 +39,7 @@ $(document).ready(function() {
     // Code for timer
     // Upon the earlier of the timer expiring or the user clicking "Done", the question view is hidden, the results view is shown, and the results are calculated
 
-    var number = 121;
+    var number = 11;
     var intervalId;
 
     function runTimer() {
@@ -73,6 +72,7 @@ $(document).ready(function() {
         showResults();
         calcResults();
     });
+
 
     //click events when user selects an answer; answer stored in indexed position in user answer array
     $(".Q01").on("click", function() {
@@ -129,7 +129,6 @@ $(document).ready(function() {
         console.log(correctAnsArr);
         console.log(userAnsArr);
 
-        //------------------------------------------------
         //set up array to store user's correct answers only
         let userCorrectAnsArr = [];
 
@@ -137,45 +136,33 @@ $(document).ready(function() {
         for (let i = 0; i < userAnsArr.length; i++) {
             if (correctAnsArr.indexOf(userAnsArr[i]) !== -1) {
                 userCorrectAnsArr.push(userAnsArr[i]);
-                correctCounter++;
             }
         }
-        console.log("Correct answers array: " + userCorrectAnsArr);
+        console.log(userCorrectAnsArr);
 
         //determine NUMBER of correct answers
-        console.log("Number of correct answers: " + correctCounter);
+        numUserCorrectAns = userCorrectAnsArr.length;
+        console.log("Number of correct answers: " + numUserCorrectAns);
 
-        //------------------------------------------------
-        //set up array to store user's incorrect answers only
-        let userIncorrectAnsArr = [];
-
-        //push incorrect answers into this array by looping through user's answers and check to see if they are not included in the correct answer array
-        for (let i = 0; i < userAnsArr.length; i++) {
-            if (correctAnsArr.indexOf(userAnsArr[i]) === -1) {
-                userIncorrectAnsArr.push(userAnsArr[i]);
-            }
+        // check for NUMBER of unanswered questions, allowing for all questions either being answered or all questions not being answered
+        console.log(userAnsArr.length);
+        let numUserEmpties = 0;
+        if (userAnsArr.length > 0) {
+            numUserEmpties = userAnsArr.length - userAnsArr.filter(function(x) { return true }).length;
+        } else if (userAnsArr.length == correctAnsArr.length) {
+            numUserEmpties = 0
+        } else {
+            numUserEmpties = correctAnsArr.length;
         }
-        console.log("Incorrect answer array: " + userIncorrectAnsArr);
+        console.log("Number of unanswered questions: " + numUserEmpties);
 
-        // but need to modify this array to exclude empty values
-        let filteredUserIncorrectAnsArr = userIncorrectAnsArr.filter(function(element) {
-            if (element != "") return element;
-        });
-        console.log("Modified incorrect answer array: " + filteredUserIncorrectAnsArr);
-
-        //determine NUMBER of non-empty elements in array
-        incorrectCounter = filteredUserIncorrectAnsArr.length;
-        console.log("Number of incorrect answers: " + incorrectCounter);
-
-        //------------------------------------------------
-        //Calculate number of unanswered questions
-        unansweredCounter = correctAnsArr.length - correctCounter - incorrectCounter;
-
-        console.log("Number of unanswered questions: " + unansweredCounter);
+        //calculate NUMBER of incorrect answers
+        let numUserIncorrectAns = correctAnsArr.length - numUserCorrectAns - numUserEmpties;
+        console.log("Number of incorrect answers: " + numUserIncorrectAns);
 
         //Write values to the DOM
-        $("#numUserCorrectAns").text("Correct answers: " + correctCounter);
-        $("#numUserIncorrectAns").text("Incorrect answers: " + incorrectCounter);
-        $("#numUserEmpties").text("Unanswered questions: " + unansweredCounter);
+        $("#numUserCorrectAns").text("Correct answers: " + numUserCorrectAns);
+        $("#numUserIncorrectAns").text("Incorrect answers: " + numUserIncorrectAns);
+        $("#numUserEmpties").text("Unanswered questions: " + numUserEmpties);
     }
 });
