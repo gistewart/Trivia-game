@@ -13,7 +13,7 @@ On page load, the user just needs to click Start to start the game. The user can
 [jQuery Official Website](https://jquery.com/)
 
 ## Project maintenance and contributions
-This is not an original game.  Instead, this project was prepared as part of the work for Georgia Tech's Coding Boot Camp.
+This is not an original game.  Instead, this project was prepared as part of an assignment for Georgia Tech's Coding Boot Camp.
 
 
 
