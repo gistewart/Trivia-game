@@ -30,8 +30,8 @@
     <div class="w-75 jumbotron opening">
         <h1 class="display-4">Harry Potter Trivia Game!</h1>
         <hr class="my-4">
-        <p>You will have 2 minutes to complete the game. When you are ready, click Start.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Start</a>
+        <p>You will have 2 minutes to answer the questions. When you are ready, click Start.</p>
+        <a class="btn btn-secondary btn-lg start" href="#" role="button">Start</a>
     </div>
 
     <div class="questions">
@@ -125,10 +125,8 @@
             </div>
         </div>
 
-        <div class="card w-25">
-            <div class="card-body Done">
-                <h1>Done</h1>
-            </div>
+        <div class="text-center done">
+            <button type="button" class="btn btn-warning btn-lg">Done</button>
         </div>
 
     </div>
@@ -137,15 +135,15 @@
         <div class="card w-50">
             <h1>Harry Potter Trivia Game!</h1>
             <div class="card-body">All Done!</div>
-            <div class="card-body">Correct Answers: </div>
-            <div class="card-body">Incorrect Answers</div>
-            <div class="card-body">Unanswered: </div>
+            <div class="card-body" id="numUserCorrectAns"></div>
+            <div class="card-body" id="numUserIncorrectAns"></div>
+            <div class="card-body" id="numUserEmpties"></div>
         </div>
     </div>
 
 
     <!-- External javascript link-->
-    <script src="assets/javascript/app.js"></script>
+    <script src="assets/javascript/app.js "></script>
 
 </body>
 

@@ -46,6 +46,10 @@ label {
     margin-right: 15px;
 }
 
+.done {
+    text-align: center;
+}
+
 img {
     float: left;
     margin-left: 160px;
