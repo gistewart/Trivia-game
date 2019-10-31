@@ -5,9 +5,10 @@ $(document).ready(function() {
     let incorrectCounter = 0;
     let unansweredCounter = 0;
 
+    //array to story user's answers
     let userAnsArr = [];
 
-    //array to store the correct answers to the questions
+    //array to store the correct answers
     const correctAnsArr = ["01A", "02D", "03A", "04C", "05A", "06B", "07B", "08D"];
 
     //there are 3 views to show the user, depending on phase of game: opening, questions and results
@@ -123,7 +124,7 @@ $(document).ready(function() {
         userAnsArr[7] = answer;
     });
 
-    //Function to calculate the results used above
+    //function to calculate the results used above
     function calcResults() {
         //console log correct answers and user's answers
         console.log(correctAnsArr);
