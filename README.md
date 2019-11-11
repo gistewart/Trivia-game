@@ -23,5 +23,8 @@ On page load, the user just needs to click Start to start the game. The user can
 ## Project maintenance and contributions
 This is not an original game.  Instead, this project was prepared as part of an assignment for Georgia Tech's Coding Boot Camp.
 
+## Deployed link
+https://gistewart.github.io/TriviaGame/
+
 
 
