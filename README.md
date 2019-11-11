@@ -5,11 +5,11 @@ This is a game for web browsers where the user answers a number of questions.  R
 
 ## Project Challenges
 The main challenges of this project, and the solutions used, were as follows:
-    - capture user answers: achieved using jQuery on click event
-    - update user answers if user changes their mind: achieved by storing the answer to each question in an indexed position in an array, allowing an update process
-    - comparison of user answers and correct answers: achieved by using a for loop to see how many answers in the user answer array were a) included and b) not included in the correct answer array
-    - timer for the game: achieved by using setInterval and clearInterval jQuery methods
-    - display results: achieved by using jQuery DOM manipulation
+1. capture user answers: achieved using jQuery on click event
+2. update user answers if user changes their mind: achieved by storing the answer to each question in an indexed position in an array, allowing an update process
+3. comparison of user answers and correct answers: achieved by using a for loop to see how many answers in the user answer array were a) included and b) not included in the correct answer array
+4. timer for the game: achieved by using setInterval and clearInterval jQuery methods
+5. display results: achieved by using jQuery DOM manipulation
 
 ## Project Usefulness
 This project demonstrates the applicaton of the jQuery library including click events, a timer, content being hidden and displayed, and updates to the HTML file based on user behavior. 
