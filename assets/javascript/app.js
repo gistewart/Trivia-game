@@ -1,4 +1,69 @@
 $(document).ready(function() {
+  var questions = [
+    {
+      question: "Who is the author of Harry Potter?",
+      answers: [
+        "J.K. Rowling",
+        "David Williams",
+        "Lois Lowry",
+        "Louis Tomlinson"
+      ],
+      correctAnswer: "J.K. Rowling"
+    },
+    {
+      question: "Who killed Nagini at the Battle of Hogwarts",
+      answers: [
+        "Neville Longbottom",
+        "Harry Potter",
+        "Ron Weasley",
+        "Molly Weasley"
+      ],
+      correctAnswer: "Lily Evans"
+    },
+    {
+      question: "What house is Harry’s son, Albus Severus, sorted into?",
+      answers: ["Ravenclaw", "Gryffindor", "Slytherin", "Hufflepuff"],
+      correctAnswer: "Slytherin"
+    },
+    {
+      question:
+        "Which body part of Peter Petigrew is left after Sirius Black “kills” him?",
+      answers: ["Finger", "Arm", "Ear", "Eyeball"],
+      correctAnswer: "Finger"
+    },
+    {
+      question:
+        "What wizarding family helps Harry get on the Hogwarts Express in his first year?",
+      answers: ["Dumbledore's", "Weasley's", "Malfoy's", "Riddle's"],
+      correctAnswer: "Weasley's"
+    },
+    {
+      question: "Who did Snape fall in love with when he was at Hogwarts?",
+      answers: [
+        "Molly Weasley",
+        "Bellatrix Lestrange",
+        "Professor McGonagall",
+        "Lily Evans"
+      ],
+      correctAnswer: "Lily Evans"
+    },
+    {
+      question: "Who doesn’t want Harry to go to school in his second year?",
+      answers: ["Hagrid", "Dobby", "Dumbledore", "Mrs Weasley"],
+      correctAnswer: "Dobby"
+    },
+    {
+      question: "Who impersonates Mad-Eye in The Goblet of Fire?",
+      answers: [
+        "Voldemort",
+        "Sirius Black",
+        "Barty Crouch",
+        "Barty Crouch Jr."
+      ],
+      correctAnswer: "Barty Crouch Jr."
+    }
+  ];
+
   //declare global variables for number of questions answered correctly, number of questions answered incorrectly and number of questions not answered
   let correctCounter = 0;
   let incorrectCounter = 0;
