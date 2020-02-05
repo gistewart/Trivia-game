@@ -13,6 +13,16 @@ $(document).ready(function() {
       correctAnswer: "J.K. Rowling"
     },
     {
+      question: "Who did Snape fall in love with when he was at Hogwarts?",
+      answers: [
+        "Molly Weasley",
+        "Bellatrix Lestrange",
+        "Professor McGonagall",
+        "Lily Evans"
+      ],
+      correctAnswer: "Lily Evans"
+    },
+    {
       question: "Who killed Nagini at the Battle of Hogwarts",
       answers: [
         "Neville Longbottom",
@@ -20,7 +30,7 @@ $(document).ready(function() {
         "Ron Weasley",
         "Molly Weasley"
       ],
-      correctAnswer: "Lily Evans"
+      correctAnswer: "Neville Longbottom"
     },
     {
       question: "What house is Harry’s son, Albus Severus, sorted into?",
@@ -36,18 +46,8 @@ $(document).ready(function() {
     {
       question:
         "What wizarding family helps Harry get on the Hogwarts Express in his first year?",
-      answers: ["Dumbledore's", "Weasley's", "Malfoy's", "Riddle's"],
-      correctAnswer: "Weasley's"
-    },
-    {
-      question: "Who did Snape fall in love with when he was at Hogwarts?",
-      answers: [
-        "Molly Weasley",
-        "Bellatrix Lestrange",
-        "Professor McGonagall",
-        "Lily Evans"
-      ],
-      correctAnswer: "Lily Evans"
+      answers: ["Dumbledores", "Weasleys", "Malfoys", "Riddles"],
+      correctAnswer: "Weasleys"
     },
     {
       question: "Who doesn’t want Harry to go to school in his second year?",
@@ -71,7 +71,7 @@ $(document).ready(function() {
   var game = {
     correct: 0,
     incorrect: 0,
-    counter: 121,
+    counter: 5,
 
     countdown: function() {
       game.counter--;
@@ -93,7 +93,7 @@ $(document).ready(function() {
       $(".start").remove();
       $(".instructions").remove();
 
-      for (let i = 6; i < questions.length; i++) {
+      for (let i = 0; i < questions.length; i++) {
         card.append("<h4>" + questions[i].question + "</h4");
         for (let j = 0; j < questions[i].answers.length; j++) {
           card.append(
@@ -106,7 +106,7 @@ $(document).ready(function() {
           );
         }
       }
-      //   card.append("<button id = 'done'>Done</button");
+
       card.append(
         "<p><a id='done' class='btn btn-secondary btn-lg done' href='#' role='button'>Done</a></p>"
       );
@@ -114,8 +114,15 @@ $(document).ready(function() {
 
     done: function() {
       var inputs = card.children("input:checked");
+      console.log(inputs);
+      var arr = [];
+      for (let i = 0; i < inputs.length; i++) {
+        arr.push(inputs[i].name.slice(-1));
+      }
+      console.log(arr);
+
       for (var i = 0; i < inputs.length; i++) {
-        if ($(inputs[i]).val() === questions[i].correctAnswer) {
+        if ($(inputs[i]).val() === questions[arr[i]].correctAnswer) {
           game.correct++;
         } else {
           game.incorrect++;
@@ -132,6 +139,11 @@ $(document).ready(function() {
       card.html("<h2>All Done!</h2>");
       card.append("<h3>Correct Answers: " + this.correct + "</h3>");
       card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+      card.append(
+        "<h3>No Response: " +
+          (questions.length - this.correct - this.incorrect) +
+          "</h3>"
+      );
     }
   };
 
