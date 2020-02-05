@@ -92,7 +92,7 @@ $(document).ready(function() {
         card.append("<h4>" + questions[i].question + "</h4");
         for (let j = 0; j < questions[i].answers.length; j++) {
           card.append(
-            "<input type = 'radio' name = 'question-" +
+            "<input type='radio' name='question-" +
               i +
               "' value = '" +
               questions[i].answers[j] +
@@ -101,7 +101,10 @@ $(document).ready(function() {
           );
         }
       }
-      card.append("<button id = 'done'>Done</button");
+      //   card.append("<button id = 'done'>Done</button");
+      card.append(
+        "<p><a id='done' class='btn btn-secondary btn-lg done' href='#' role='button'>Done</a></p>"
+      );
     },
 
     done: function() {
