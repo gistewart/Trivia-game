@@ -67,14 +67,19 @@ $(document).ready(function() {
   ];
 
   var timer;
+  var minutes;
   var game = {
     correct: 0,
     incorrect: 0,
-    counter: 120,
+    counter: 121,
 
     countdown: function() {
       game.counter--;
-      $("#counter-number").html(game.counter);
+      minutes = parseInt(game.counter / 60, 10);
+      minutes = minutes < 10 ? "0" + minutes : minutes;
+      seconds = parseInt(game.counter % 60, 10);
+      seconds = seconds < 10 ? "0" + seconds : seconds;
+      $("#counter-number").html("Time remaining " + minutes + ":" + seconds);
       if (game.counter === 0) {
         game.done();
       }
@@ -82,9 +87,9 @@ $(document).ready(function() {
 
     start: function() {
       timer = setInterval(game.countdown, 1000);
-      card.prepend(
-        "<h2>Time Remaining: <span id='counter-number'>120</span> seconds</h2>"
-      );
+
+      card.prepend("<h2 class='timer'><span id='counter-number'></span></h2>");
+
       $(".start").remove();
       $(".instructions").remove();
 
