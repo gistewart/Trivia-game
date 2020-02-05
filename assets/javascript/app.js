@@ -83,12 +83,12 @@ $(document).ready(function() {
     start: function() {
       timer = setInterval(game.countdown, 1000);
       card.prepend(
-        "<h2>Time Remaining: <span id='counter-number'>120</span>Seconds</h2>"
+        "<h2>Time Remaining: <span id='counter-number'>120</span> seconds</h2>"
       );
       $(".start").remove();
       $(".instructions").remove();
 
-      for (let i = 0; i < questions.length; i++) {
+      for (let i = 6; i < questions.length; i++) {
         card.append("<h4>" + questions[i].question + "</h4");
         for (let j = 0; j < questions[i].answers.length; j++) {
           card.append(
@@ -106,14 +106,11 @@ $(document).ready(function() {
 
     done: function() {
       var inputs = card.children("input:checked");
-      console.log(inputs);
       for (var i = 0; i < inputs.length; i++) {
         if ($(inputs[i]).val() === questions[i].correctAnswer) {
           game.correct++;
-          console.log(game.correct);
         } else {
           game.incorrect++;
-          console.log(game.incorrect);
         }
       }
       this.result();

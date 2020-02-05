@@ -1,51 +1,48 @@
 * {
-    box-sizing: content-box;
-}
-
-.opening,
-.card,
-.results {
-    margin: 20px auto 10px auto;
-    text-align: center;
+  box-sizing: content-box;
 }
 
 .jumbotron {
-    height: 160px;
+  margin: 20px auto 10px auto;
+  text-align: center;
+  min-height: 80%;
 }
 
 h1,
-h5 {
-    font-family: 'Henny Penny', cursive;
-    background-color: bisque;
+h4 {
+  font-family: "Henny Penny", cursive;
+  background-color: bisque;
 }
 
 .display-4 {
-    padding: 20px;
-    margin-top: -30px;
+  padding: 20px;
+  margin-top: -30px;
 }
 
 .btn {
-    padding-left: 25px;
-    padding-right: 25px;
+  margin-top: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin-bottom: -15px;
 }
 
 #timer {
-    text-align: center;
-    background-color: green;
-    color: white;
-    font-size: 16px;
-    font-weight: 600px;
-    padding: 10px;
+  text-align: center;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  font-weight: 600px;
+  padding: 10px;
 }
 
 input[type="radio"] {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 label {
-    margin-right: 15px;
+  margin-right: 15px;
 }
 
 .done {
-    text-align: center;
+  text-align: center;
 }
