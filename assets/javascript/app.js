@@ -72,7 +72,7 @@ $(document).ready(function() {
   var game = {
     correct: 0,
     incorrect: 0,
-    counter: 120,
+    counter: 121,
 
     countdown: function() {
       game.counter--;
@@ -163,13 +163,6 @@ $(document).ready(function() {
   });
 
   $(document).on("click", ".replay", function() {
-    sessionStorage.reloadAfterPageLoad = true;
-    window.location.reload();
-  });
-  $(function() {
-    if (sessionStorage.reloadAfterPageLoad) {
-      game.start();
-      sessionStorage.reloadAfterPageLoad = false;
-    }
+    location.reload();
   });
 });

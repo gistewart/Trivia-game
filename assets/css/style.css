@@ -2,10 +2,16 @@
   box-sizing: content-box;
 }
 
+body {
+  background-image: url("../images/64772.jpg");
+  background-size: cover;
+}
+
 .jumbotron {
   margin: 20px auto 10px auto;
   text-align: center;
   min-height: 80%;
+  opacity: 0.8;
 }
 
 h1,
@@ -51,5 +57,10 @@ input[type="radio"] {
 }
 
 h3 {
-  color: rgb(97, 95, 95);
+  color: rgb(63, 61, 61);
+}
+
+.replay {
+  margin-top: 35px;
+  margin-bottom: -15px;
 }
