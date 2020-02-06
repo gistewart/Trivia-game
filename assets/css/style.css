@@ -31,6 +31,7 @@ h4 {
   padding-left: 25px;
   padding-right: 25px;
   margin-bottom: -65px;
+  text-align: center;
 }
 
 .timer {
@@ -49,10 +50,6 @@ input[type="radio"] {
   margin-bottom: 50px;
 }
 
-label {
-  margin-right: 15px;
-}
-
-.done {
-  text-align: center;
+h3 {
+  color: rgb(97, 95, 95);
 }

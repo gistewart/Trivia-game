@@ -68,10 +68,11 @@ $(document).ready(function() {
 
   var timer;
   var minutes;
+  var seconds;
   var game = {
     correct: 0,
     incorrect: 0,
-    counter: 5,
+    counter: 120,
 
     countdown: function() {
       game.counter--;
@@ -92,6 +93,7 @@ $(document).ready(function() {
 
       $(".start").remove();
       $(".instructions").remove();
+      $(".results").remove();
 
       for (let i = 0; i < questions.length; i++) {
         card.append("<h4>" + questions[i].question + "</h4");
@@ -108,18 +110,16 @@ $(document).ready(function() {
       }
 
       card.append(
-        "<p><a id='done' class='btn btn-secondary btn-lg done' href='#' role='button'>Done</a></p>"
+        "<p><a class='btn btn-secondary btn-lg done' href='#' role='button'>Done</a></p>"
       );
     },
 
     done: function() {
       var inputs = card.children("input:checked");
-      console.log(inputs);
       var arr = [];
       for (let i = 0; i < inputs.length; i++) {
         arr.push(inputs[i].name.slice(-1));
       }
-      console.log(arr);
 
       for (var i = 0; i < inputs.length; i++) {
         if ($(inputs[i]).val() === questions[arr[i]].correctAnswer) {
@@ -136,13 +136,20 @@ $(document).ready(function() {
 
       $("#question-container h4").remove();
 
-      card.html("<h2>All Done!</h2>");
-      card.append("<h3>Correct Answers: " + this.correct + "</h3>");
-      card.append("<h3>Incorrect Answers: " + this.incorrect + "</h3>");
+      card.html("<h2 class='results'>All Done!</h2>");
       card.append(
-        "<h3>No Response: " +
+        "<h3 class='results'>Correct Answers: " + this.correct + "</h3>"
+      );
+      card.append(
+        "<h3 class='results'>Incorrect Answers: " + this.incorrect + "</h3>"
+      );
+      card.append(
+        "<h3 class='results'>No Response: " +
           (questions.length - this.correct - this.incorrect) +
           "</h3>"
+      );
+      card.append(
+        "<p><a class='results btn btn-secondary btn-lg replay' href='#' role='button'>Try Again!</a></p>"
       );
     }
   };
@@ -151,8 +158,18 @@ $(document).ready(function() {
     game.start();
   });
 
-  $(document).on("click", "#done", function() {
-    console.log("I've been clicked");
+  $(document).on("click", ".done", function() {
     game.done();
+  });
+
+  $(document).on("click", ".replay", function() {
+    sessionStorage.reloadAfterPageLoad = true;
+    window.location.reload();
+  });
+  $(function() {
+    if (sessionStorage.reloadAfterPageLoad) {
+      game.start();
+      sessionStorage.reloadAfterPageLoad = false;
+    }
   });
 });
